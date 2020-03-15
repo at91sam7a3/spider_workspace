@@ -1,5 +1,5 @@
 #include <ros/ros.h>
-#include "lx16_servo/Servo.h"
+#include "../../../devel/include/lx16_servo/Servo.h"
 #include "std_msgs/String.h"
 #include "../lx16lib/lx16driver.h"
 #include "lx16_servo_node.h"
