@@ -1,3 +1,6 @@
 [submodule "lx16_servo/lx16lib"]
 	path = lx16_servo/lx16lib
 	url = https://github.com/at91sam7a3/lx16lib.git
+[submodule "spider_messages"]
+	path = spider_messages
+	url = https://github.com/at91sam7a3/spider_messages.git
