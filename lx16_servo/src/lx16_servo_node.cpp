@@ -1,5 +1,5 @@
 #include <ros/ros.h>
-#include "../../../devel/include/lx16_servo/Servo.h"
+#include "../../../devel/include/spider_messages/Servo.h"
 #include "std_msgs/String.h"
 #include "../lx16lib/lx16driver.h"
 #include "lx16_servo_node.h"
@@ -24,7 +24,7 @@ Lx16ServoNode::Lx16ServoNode()
     }
 }
 
-void Lx16ServoNode::servoPosCallback(const lx16_servo::Servo::ConstPtr msg)
+void Lx16ServoNode::servoPosCallback(const spider_messages::Servo::ConstPtr msg)
 {
     ROS_INFO("Set Servo ", msg->Id, " to position ", msg->Position);
     m_driver.ServoMoveTimeWrite(msg->Id,msg->Position,100);

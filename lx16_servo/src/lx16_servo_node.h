@@ -9,7 +9,7 @@ public:
     ~Lx16ServoNode() = default;
 
 private:
-    void servoPosCallback(const lx16_servo::Servo::ConstPtr msg);
+    void servoPosCallback(const spider_messages::Servo::ConstPtr msg);
 
 private:
     ros::NodeHandle m_nh;

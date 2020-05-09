@@ -1,9 +1,9 @@
 #include <ros/ros.h>
 #include "std_msgs/String.h"
-#include "../../../devel/include/platform_power/LegPower.h"
+#include "../../../devel/include/spider_messages/LegPower.h"
 #include <wiringPi.h>
 
-void powerSwitchCallback(const platform_power::LegPowerConstPtr msg)
+void powerSwitchCallback(const spider_messages::LegPowerConstPtr msg)
 {
     bool on = msg->PowerToLegs;
     digitalWrite (7,on);
