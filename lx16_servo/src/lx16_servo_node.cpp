@@ -3,7 +3,6 @@
 #include "../../../devel/include/spider_messages/LegPower.h"
 #include "std_msgs/String.h"
 #include "../lx16lib/lx16driver.h"
-#include "lx16_servo_node.h"
 #include <wiringPi.h>
 #include <vector>
 
