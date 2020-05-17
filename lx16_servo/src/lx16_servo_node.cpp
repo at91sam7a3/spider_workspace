@@ -43,7 +43,7 @@ int main(int argc, char** argv)
         ROS_ERROR("Serial /dev/serial0 not available");
     }
 
-    ros::Rate r(100); // 10 hz
+    ros::Rate r(100); // 100 hz
     while (ros::ok())
     {
         if(commands.size() > 0)
