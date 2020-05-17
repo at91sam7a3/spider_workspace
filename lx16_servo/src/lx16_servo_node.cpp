@@ -37,7 +37,7 @@ int main(int argc, char** argv)
     ros::NodeHandle m_nh;
     ros::Subscriber power_sub = m_nh.subscribe("servo_power", 100, &powerSwitchCallback);
     ros::Subscriber position_sub =  m_nh.subscribe("servo_pos", 100, &servoPosCallback);
-
+    digitalWrite (7,true);
     lx16driver m_driver("/dev/serial0",true);
     if( m_driver.isOperational() == false ){
         ROS_ERROR("Serial /dev/serial0 not available");
@@ -46,14 +46,15 @@ int main(int argc, char** argv)
     ros::Rate r(100); // 10 hz
     while (ros::ok())
     {
-        if(commands.size() > 0){
-           servoCommand s = commands[size-1];
-           commands.pop_back();
-           m_driver.ServoMoveTimeWrite(s.id,s.position,100);
+        if(commands.size() > 0)
+        {
+            servoCommand s = commands[size-1];
+            commands.pop_back();
+            m_driver.ServoMoveTimeWrite(s.id,s.position,100);
         }
         ros::spinOnce();
         r.sleep();
     }
-
+    digitalWrite (7,false);
     return 0;
 }
