@@ -48,7 +48,7 @@ int main(int argc, char** argv)
     {
         if(commands.size() > 0)
         {
-            servoCommand s = commands[size-1];
+            servoCommand s = commands[commands.size()-1];
             commands.pop_back();
             m_driver.ServoMoveTimeWrite(s.id,s.position,100);
         }
